@@ -1,0 +1,7 @@
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\bin\Debug\PizzaStrategy.exe.config
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\bin\Debug\PizzaStrategy.exe
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\bin\Debug\PizzaStrategy.pdb
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\obj\Debug\PizzaStrategy.csprojAssemblyReference.cache
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\obj\Debug\PizzaStrategy.csproj.CoreCompileInputs.cache
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\obj\Debug\PizzaStrategy.exe
+C:\Users\Gabriele\source\repos\PizzaStrategy\PizzaStrategy\obj\Debug\PizzaStrategy.pdb
