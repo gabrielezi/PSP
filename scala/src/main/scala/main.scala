@@ -1,4 +1,4 @@
-trait Pizza {
+abstract class Pizza {
   //var ingredientList : List[String]
   def MakePizza(ingredients: List[String]) = {
       if (CheckIfChangeable(ingredients)) {
