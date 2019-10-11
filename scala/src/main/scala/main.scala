@@ -19,6 +19,20 @@ abstract class Pizza {
   def Prepare(): Unit
   def Cook(): Unit
 }
+abstract class Coffee {
+  //var ingredientList : List[String]
+  def MakeCoffee(ingredients: List[String]) = {
+      if (CheckIfChangeable(ingredients)) {
+        var list = ReplaceIngredients(ingredients)
+        RemoveIngredients(list)
+      }
+    else println(ingredients)
+  }
+  //def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients } //setter
+  def CheckIfChangeable(ingredients: List[String]): Boolean
+  def ReplaceIngredients(ingredients: List[String]): List[String]
+  def RemoveIngredients(ingredients: List[String]): Unit
+}
 
 trait Vegetarian {
   def CheckIfChangeable(ingredients: List[String]): Boolean = {
@@ -78,7 +92,16 @@ class Vegan_WoodFiredOvenPizza extends Pizza with Vegan with WoodFiredOven{}
 class NoneDiet_PizzaStonePizza extends Pizza with NoneDiet with PizzaStone{}
 class NoneDiet_WoodFiredOvenPizza extends Pizza with NoneDiet with WoodFiredOven{}
 
+class VegetarianCoffee extends Coffee with Vegetarian
+class VeganCoffee extends Coffee with Vegan
+class NoneDietCoffee extends Coffee with NoneDiet
+
+
 val list = List("sauce", "pepperoni", "salmon", "milk")
 var veg_pizzaStone = new Vegetarian_PizzaStonePizza();
 veg_pizzaStone.MakePizza(list)
 veg_pizzaStone.Bake()
+
+val coffeeList = List("coffee", "milk")
+val coffee = new VeganCoffee()
+coffee.MakeCoffee(coffeeList)
