@@ -13,14 +13,15 @@ namespace PizzaTemplate
             return (ingredientList.Contains("milk") || ingredientList.Contains("egg")
                 || ingredientList.Contains("cheese"));
         }
-        public override void ReplaceIngredients(List<string> ingredientList)
-        {
-            ingredientList.RemoveAll(t => t == "milk" || t == "egg" || t == "cheese");
-        }
-        public override void RemoveIngredients(List<string> ingredientList)
+        public override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("milk"))] = "almondMilk";
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("cheese"))] = "veganCheese";
+            return ingredientList;
+        }
+        public override void RemoveIngredients(List<string> ingredientList)
+        {
+            ingredientList.RemoveAll(t => t == "milk" || t == "egg" || t == "cheese");
         }
 
         public override void Prepare()

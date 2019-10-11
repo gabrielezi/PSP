@@ -19,18 +19,19 @@ namespace PizzaStrategy
             ingredients.RemoveAll(t => t == "milk" || t == "egg" || t == "cheese");
         }
 
-        public override void ReplaceIngredients(List<string> ingredients)
+        public override List<string> ReplaceIngredients(List<string> ingredients)
         {
             try
             {
                 ingredients[ingredients.FindIndex(ind => ind.Equals("milk"))] = "almondMilk";
                 ingredients[ingredients.FindIndex(ind => ind.Equals("cheese"))] = "veganCheese";
-                RemoveIngredients(ingredients);
+                return ingredients;
             }
             catch (ArgumentOutOfRangeException outOfRange)
             {
 
                 Console.WriteLine("Error: {0}", outOfRange.Message);
+                return ingredients;
             }
 
         }

@@ -12,9 +12,10 @@ namespace PizzaTemplate
         {
             return false;
         }
-        public override void ReplaceIngredients(List<string> ingredientList)
+        public override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             Console.WriteLine("there's nothing to remove");
+            return ingredientList;
         }
         public override void RemoveIngredients(List<string> ingredientList)
         {

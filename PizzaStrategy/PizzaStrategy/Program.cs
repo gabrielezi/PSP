@@ -10,8 +10,6 @@ namespace PizzaStrategy
     {
         static void Main(string[] args)
         {
-            List<string> diets = new List<string>() { "vegetarian", "vegan", "none"};
-
             Pizza pizza = new Pizza();
             List<string> pepperoniPizza = new List<string>()
             { "flour", "milk", "olive oil", "pepperoni", "cheese", "sauce"};

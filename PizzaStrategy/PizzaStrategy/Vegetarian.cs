@@ -19,11 +19,11 @@ namespace PizzaStrategy
             ingredients.RemoveAll(t => t == "pepperoni" || t == "salami" || t == "salmon");
         }
 
-        public override void ReplaceIngredients(List<string> ingredients)
+        public override List<string> ReplaceIngredients(List<string> ingredients)
         {
             ingredients[ingredients.FindIndex(ind => ind.Equals("pepperoni") ||
                         ind.Equals("salami") || ind.Equals("salmon"))] = "mushroom";
-            RemoveIngredients(ingredients);
+            return ingredients;
         }
     }
 }

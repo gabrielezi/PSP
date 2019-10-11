@@ -18,9 +18,10 @@ namespace PizzaStrategy
             Console.WriteLine("there's nothing to remove");
         }
 
-        public override void ReplaceIngredients(List<string> ingredients)
+        public override List<string> ReplaceIngredients(List<string> ingredients)
         {
             Console.WriteLine("there's nothing to replace");
+            return ingredients;
         }
     }
 }

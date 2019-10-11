@@ -9,7 +9,7 @@ namespace PizzaStrategy
     public abstract class Diet
     {
         public abstract bool CheckIfChangeable(List<string> ingredients);
-        public abstract void ReplaceIngredients(List<string> ingredients);
+        public abstract List<string> ReplaceIngredients(List<string> ingredients);
         public abstract void RemoveIngredients(List<string> ingredients);
     
     }

@@ -15,13 +15,13 @@ namespace PizzaTemplate
             ingredients = ingredientList;
         }
         public abstract bool CheckIfChangeable(List<string> ingredientList);
-        public abstract void ReplaceIngredients(List<string> ingredientList);
+        public abstract List<string> ReplaceIngredients(List<string> ingredientList);
         public abstract void RemoveIngredients(List<string> ingredientList);
         public void MakeCoffee(List<string> ingredientList)
         {
             if (CheckIfChangeable(ingredientList))
             {
-                ReplaceIngredients(ingredientList);
+                ingredients = ReplaceIngredients(ingredientList);
                 RemoveIngredients(ingredientList);
             }
         }

@@ -52,6 +52,7 @@
     <Compile Include="NoneDietCoffee.cs" />
     <Compile Include="VeganCoffee.cs" />
     <Compile Include="Vegan_WoodFiredOvenPizza.cs" />
+    <Compile Include="VegetarianCoffee.cs" />
     <Compile Include="Vegetarian_PizzaStonePizza.cs" />
     <Compile Include="Vegetarian_WoodFiredOvenPizza.cs" />
     <Compile Include="Vegan_PizzaStonePizza.cs" />

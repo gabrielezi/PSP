@@ -6,30 +6,22 @@ using System.Threading.Tasks;
 
 namespace PizzaTemplate
 {
-    class NoneDiet_WoodFiredOvenPizza : Pizza
+    class VegetarianCoffee : Coffee
     {
         public override bool CheckIfChangeable(List<string> ingredientList)
         {
-            return false;
+            return (ingredientList.Contains("pepperoni") || ingredientList.Contains("salami")
+                || ingredientList.Contains("salmon") || ingredientList.Contains("gelatin"));
         }
         public override List<string> ReplaceIngredients(List<string> ingredientList)
         {
-            Console.WriteLine("there's nothing to remove");
+            ingredientList[ingredientList.FindIndex(ind => ind.Equals("pepperoni") ||
+                        ind.Equals("salami") || ind.Equals("salmon"))] = "mushroom";
             return ingredientList;
         }
         public override void RemoveIngredients(List<string> ingredientList)
         {
-            Console.WriteLine("there's nothing to replace");
-        }
-
-        public override void Prepare()
-        {
-            Console.WriteLine("Reaching the needed temperature");
-        }
-
-        public override void Cook()
-        {
-            Console.WriteLine("The pizza is cooked in a wood fired oven");
+            ingredientList.RemoveAll(t => t == "pepperoni" || t == "gelatin" || t == "salmon");
         }
     }
 }

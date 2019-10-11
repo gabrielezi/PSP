@@ -18,9 +18,10 @@ namespace PizzaTemplate
             ingredientList.RemoveAll(t => t == "milk" || t == "cream");
         }
 
-        public override void ReplaceIngredients(List<string> ingredientList)
+        public override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("milk"))] = "almondMilk";
+            return ingredientList;
         }
     }
 }

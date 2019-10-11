@@ -19,6 +19,7 @@ namespace PizzaStrategy
         {
             pizzaType = type;
         }
+
         public void SetIngredients(List<string> ingredientList)
         {
             ingredients = ingredientList;
@@ -29,7 +30,7 @@ namespace PizzaStrategy
             _diet = diet;
             if (_diet.CheckIfChangeable(ingredients))
             {
-                _diet.ReplaceIngredients(ingredients);
+                ingredients = _diet.ReplaceIngredients(ingredients);
                 _diet.RemoveIngredients(ingredients);
             }
         }

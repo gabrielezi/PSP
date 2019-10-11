@@ -13,9 +13,10 @@ namespace PizzaTemplate
             return (ingredientList.Contains("milk") || ingredientList.Contains("egg")
                 || ingredientList.Contains("cheese"));
         }
-        public override void ReplaceIngredients(List<string> ingredientList)
+        public override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             ingredientList.RemoveAll(t => t == "milk" || t == "egg" || t == "cheese");
+            return ingredientList;
         }
         public override void RemoveIngredients(List<string> ingredientList)
         {
