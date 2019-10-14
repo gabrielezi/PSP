@@ -8,28 +8,36 @@ namespace PizzaTemplate
 {
     class NoneDiet_PizzaStonePizza : Pizza
     {
+        private NoneDiet _noneDiet;
+        private PizzaStone _pizzaStone;
+        public NoneDiet_PizzaStonePizza(NoneDiet diet, PizzaStone stone)
+        {
+            _noneDiet = diet;
+            _pizzaStone = stone;
+        }
         public override bool CheckIfChangeable(List<string> ingredientList)
         {
-            return false;
-        }
-        public override List<string> ReplaceIngredients(List<string> ingredientList)
-        {
-            Console.WriteLine("there's nothing to remove");
-            return ingredientList;
-        }
-        public override void RemoveIngredients(List<string> ingredientList)
-        {
-            Console.WriteLine("there's nothing to replace");
-        }
-
-        public override void Prepare()
-        {
-            Console.WriteLine("Reaching the needed temperature");
+            return _noneDiet.CheckIfChangeable(ingredientList);
         }
 
         public override void Cook()
         {
-            Console.WriteLine("The pizza is cooked on a pizza stone");
+            _pizzaStone.Cook();
+        }
+
+        public override void Prepare()
+        {
+            _pizzaStone.Prepare();
+        }
+
+        public override void RemoveIngredients(List<string> ingredientList)
+        {
+            _noneDiet.RemoveIngredients(ingredientList);
+        }
+
+        public override List<string> ReplaceIngredients(List<string> ingredientList)
+        {
+            return _noneDiet.ReplaceIngredients(ingredientList);
         }
     }
 }

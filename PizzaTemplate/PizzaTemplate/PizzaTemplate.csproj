@@ -44,8 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Coffee.cs" />
+    <Compile Include="NoneDiet.cs" />
     <Compile Include="NoneDiet_PizzaStonePizza.cs" />
     <Compile Include="NoneDiet_WoodFiredOvenPizza.cs" />
+    <Compile Include="PizzaStone.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pizza.cs" />
