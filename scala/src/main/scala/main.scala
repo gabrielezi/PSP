@@ -8,16 +8,16 @@ abstract class Pizza {
     else println(ingredients)
   }
   //def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients } //setter
-  def CheckIfChangeable(ingredients: List[String]): Boolean
-  def ReplaceIngredients(ingredients: List[String]): List[String]
-  def RemoveIngredients(ingredients: List[String]): Unit
+  protected def CheckIfChangeable(ingredients: List[String]): Boolean
+  protected def ReplaceIngredients(ingredients: List[String]): List[String]
+  protected def RemoveIngredients(ingredients: List[String]): Unit
   
   def Bake() = {
     Prepare()
     Cook()
   }
-  def Prepare(): Unit
-  def Cook(): Unit
+  protected def Prepare(): Unit
+  protected def Cook(): Unit
 }
 abstract class Coffee {
   //var ingredientList : List[String]
@@ -29,9 +29,9 @@ abstract class Coffee {
     else println(ingredients)
   }
   //def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients } //setter
-  def CheckIfChangeable(ingredients: List[String]): Boolean
-  def ReplaceIngredients(ingredients: List[String]): List[String]
-  def RemoveIngredients(ingredients: List[String]): Unit
+  protected def CheckIfChangeable(ingredients: List[String]): Boolean
+  protected def ReplaceIngredients(ingredients: List[String]): List[String]
+  protected def RemoveIngredients(ingredients: List[String]): Unit
 }
 
 trait Vegetarian {
@@ -98,10 +98,16 @@ class NoneDietCoffee extends Coffee with NoneDiet
 
 
 val list = List("sauce", "pepperoni", "salmon", "milk")
-var veg_pizzaStone = new Vegetarian_PizzaStonePizza();
-veg_pizzaStone.MakePizza(list)
-veg_pizzaStone.Bake()
+//var veg_pizzaStone = new Vegetarian_PizzaStonePizza();
+//veg_pizzaStone.MakePizza(list)
+//veg_pizzaStone.Bake()
 
 val coffeeList = List("coffee", "milk")
 val coffee = new VeganCoffee()
 coffee.MakeCoffee(coffeeList)
+
+//------be klasiu
+
+val vegetarian_pizzaStone = new Pizza with Vegetarian with PizzaStone
+vegetarian_pizzaStone.MakePizza(list)
+vegetarian_pizzaStone.Bake()
