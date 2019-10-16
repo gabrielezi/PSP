@@ -8,26 +8,26 @@ namespace PizzaTemplate
 {
     class NoneDiet_WoodFiredOvenPizza : Pizza
     {
-        public override bool CheckIfChangeable(List<string> ingredientList)
+        protected override bool CheckIfChangeable(List<string> ingredientList)
         {
             return false;
         }
-        public override List<string> ReplaceIngredients(List<string> ingredientList)
+        protected override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             Console.WriteLine("there's nothing to remove");
             return ingredientList;
         }
-        public override void RemoveIngredients(List<string> ingredientList)
+        protected override void RemoveIngredients(List<string> ingredientList)
         {
             Console.WriteLine("there's nothing to replace");
         }
 
-        public override void Prepare()
+        protected override void Prepare()
         {
             Console.WriteLine("Reaching the needed temperature");
         }
 
-        public override void Cook()
+        protected override void Cook()
         {
             Console.WriteLine("The pizza is cooked in a wood fired oven");
         }

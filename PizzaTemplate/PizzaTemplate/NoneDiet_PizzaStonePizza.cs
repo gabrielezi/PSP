@@ -15,27 +15,27 @@ namespace PizzaTemplate
             _noneDiet = diet;
             _pizzaStone = stone;
         }
-        public override bool CheckIfChangeable(List<string> ingredientList)
+        protected override bool CheckIfChangeable(List<string> ingredientList)
         {
             return _noneDiet.CheckIfChangeable(ingredientList);
         }
 
-        public override void Cook()
+        protected override void Cook()
         {
             _pizzaStone.Cook();
         }
 
-        public override void Prepare()
+        protected override void Prepare()
         {
             _pizzaStone.Prepare();
         }
 
-        public override void RemoveIngredients(List<string> ingredientList)
+        protected override void RemoveIngredients(List<string> ingredientList)
         {
             _noneDiet.RemoveIngredients(ingredientList);
         }
 
-        public override List<string> ReplaceIngredients(List<string> ingredientList)
+        protected override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             return _noneDiet.ReplaceIngredients(ingredientList);
         }

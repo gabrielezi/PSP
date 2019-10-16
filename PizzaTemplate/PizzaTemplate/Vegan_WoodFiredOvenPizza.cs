@@ -8,28 +8,28 @@ namespace PizzaTemplate
 {
     class Vegan_WoodFiredOvenPizza : Pizza
     {
-        public override bool CheckIfChangeable(List<string> ingredientList)
+        protected override bool CheckIfChangeable(List<string> ingredientList)
         {
             return (ingredientList.Contains("milk") || ingredientList.Contains("egg")
                 || ingredientList.Contains("cheese"));
         }
-        public override List<string> ReplaceIngredients(List<string> ingredientList)
+        protected override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             ingredientList.RemoveAll(t => t == "milk" || t == "egg" || t == "cheese");
             return ingredientList;
         }
-        public override void RemoveIngredients(List<string> ingredientList)
+        protected override void RemoveIngredients(List<string> ingredientList)
         {
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("milk"))] = "almondMilk";
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("cheese"))] = "veganCheese";
         }
 
-        public override void Prepare()
+        protected override void Prepare()
         {
             Console.WriteLine("Reaching the needed temperature");
         }
 
-        public override void Cook()
+        protected override void Cook()
         {
             Console.WriteLine("The pizza is cooked in a wood fired oven");
         }

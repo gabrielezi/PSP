@@ -8,28 +8,28 @@ namespace PizzaTemplate
 {
     class Vegetarian_PizzaStonePizza : Pizza
     {
-        public override bool CheckIfChangeable(List<string> ingredientList)
+        protected override bool CheckIfChangeable(List<string> ingredientList)
         {
             return (ingredientList.Contains("pepperoni") || ingredientList.Contains("salami")
                 || ingredientList.Contains("salmon"));
         }
-        public override List<string> ReplaceIngredients(List<string> ingredientList)
+        protected override List<string> ReplaceIngredients(List<string> ingredientList)
         {
             ingredientList[ingredientList.FindIndex(ind => ind.Equals("pepperoni") ||
                         ind.Equals("salami") || ind.Equals("salmon"))] = "mushroom";
             return ingredientList;
         }
-        public override void RemoveIngredients(List<string> ingredientList)
+        protected override void RemoveIngredients(List<string> ingredientList)
         {
             ingredientList.RemoveAll(t => t == "pepperoni" || t == "salami" || t == "salmon");
         }
 
-        public override void Prepare()
+        protected override void Prepare()
         {
             Console.WriteLine("Reaching the needed temperature");
         }
 
-        public override void Cook()
+        protected override void Cook()
         {
             Console.WriteLine("The pizza is cooked on a pizza stone");
         }

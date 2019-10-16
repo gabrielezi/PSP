@@ -16,8 +16,8 @@ namespace PizzaTemplate
             { "flour", "milk", "olive oil", "pepperoni", "cheese", "sauce"};
             vegPizza.SetIngredients(pepperoniPizza);
 
-            vegPizza.MakePizza(vegPizza.ingredients);
-            vegPizza.ingredients.ForEach(Console.WriteLine);
+            vegPizza.MakePizza(vegPizza.GetIngredients());
+            vegPizza.GetIngredients().ForEach(Console.WriteLine);
             vegPizza.Bake();
 
             Console.WriteLine("\n");
@@ -28,8 +28,8 @@ namespace PizzaTemplate
             { "flour", "milk", "olive oil", "pepperoni", "cheese", "sauce"};
             pizza.SetIngredients(pepperoniPizza1);
             
-            pizza.MakePizza(pizza.ingredients);
-            pizza.ingredients.ForEach(Console.WriteLine);
+            pizza.MakePizza(pizza.GetIngredients());
+            pizza.GetIngredients().ForEach(Console.WriteLine);
             pizza.Bake();
 
             /*  VeganCoffee coffee = new VeganCoffee();
