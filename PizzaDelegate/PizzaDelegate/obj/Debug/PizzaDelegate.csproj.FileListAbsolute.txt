@@ -1,0 +1,6 @@
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\bin\Debug\PizzaDelegate.exe.config
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\bin\Debug\PizzaDelegate.exe
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\bin\Debug\PizzaDelegate.pdb
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\obj\Debug\PizzaDelegate.csprojAssemblyReference.cache
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\obj\Debug\PizzaDelegate.exe
+C:\Users\Gabriele\source\repos\PizzaDelegate\PizzaDelegate\obj\Debug\PizzaDelegate.pdb
