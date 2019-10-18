@@ -2,33 +2,39 @@ import org.joda.time.DateTime
 import org.joda.time.format._
 
 class Pizza {
-  var date : DateTime=_
-  var ingredientList : List[String]=_
+  protected var date : DateTime=_
+  protected var ingredientList : List[String]=_
   var size: Char =_
 
   def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients }
+  def GetIngredients() : List[String]= { return ingredientList}
   def SetDate(creationDate: DateTime) = { date = creationDate }
+  def GetDate() :DateTime= { return date}
 }
 
 abstract class Coffee {
-  var date : DateTime=_
-  var ingredientList : List[String]=_
+  protected var date : DateTime=_
+  protected var ingredientList : List[String]=_
   var beanName : String =_
   var size: Char =_
   
   def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients }
+  def GetIngredients() : List[String]= { return ingredientList}
   def SetDate(creationDate: DateTime) = { date = creationDate }
+  def GetDate(): DateTime= { return date}
   def SetBeanName(name: String) = { beanName = name }
   def SetSize(size1: Char) = { size = size1 }
 }
 abstract class Bread {
-  var date : DateTime=_
-  var ingredientList : List[String]=_
+  protected var date : DateTime=_
+  protected var ingredientList : List[String]=_
   var breadType : String =_
   var size: Char =_
 
   def SetIngredients(ingredients: List[String]) = { ingredientList = ingredients }
+  def GetIngredients() : List[String]= { return ingredientList}
   def SetDate(creationDate: DateTime) = { date = creationDate }
+  def GetDate() :DateTime= { return date}
   def SetBreadType(btype: String) = { breadType = btype }
   def SetSize(size1: Char) = { size = size1 }
 }
@@ -76,8 +82,8 @@ val list = List("sauce", "pepperoni", "salmon", "milk")
 val vegetarian_pizzaStone = new Pizza with Vegetarian with PizzaStone with Time
 vegetarian_pizzaStone.SetIngredients(list)
 
-if (vegetarian_pizzaStone.CheckIfChangeable(vegetarian_pizzaStone.ingredientList)) {
-        var list = vegetarian_pizzaStone.ReplaceIngredients(vegetarian_pizzaStone.ingredientList)
+if (vegetarian_pizzaStone.CheckIfChangeable(vegetarian_pizzaStone.GetIngredients())) {
+        var list = vegetarian_pizzaStone.ReplaceIngredients(vegetarian_pizzaStone.GetIngredients())
         vegetarian_pizzaStone.RemoveIngredients(list)
   }
 vegetarian_pizzaStone.Prepare()
