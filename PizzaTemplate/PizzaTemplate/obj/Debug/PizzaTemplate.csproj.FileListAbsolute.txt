@@ -1,6 +1,0 @@
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\bin\Debug\PizzaTemplate.exe.config
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\bin\Debug\PizzaTemplate.exe
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\bin\Debug\PizzaTemplate.pdb
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\obj\Debug\PizzaTemplate.csprojAssemblyReference.cache
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\obj\Debug\PizzaTemplate.exe
-C:\Users\Gabriele\source\repos\PizzaTemplate\PizzaTemplate\obj\Debug\PizzaTemplate.pdb

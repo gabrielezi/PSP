@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AntraVisitor", "AntraVisitor\AntraVisitor.csproj", "{A7EFBEA6-E2C1-49D2-9F6C-F064041CD41B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7EFBEA6-E2C1-49D2-9F6C-F064041CD41B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7EFBEA6-E2C1-49D2-9F6C-F064041CD41B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7EFBEA6-E2C1-49D2-9F6C-F064041CD41B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7EFBEA6-E2C1-49D2-9F6C-F064041CD41B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38AB5AAD-D589-4F4D-80D2-7E3CA809B8B2}
+	EndGlobalSection
+EndGlobal
