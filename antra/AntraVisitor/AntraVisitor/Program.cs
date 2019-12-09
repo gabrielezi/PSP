@@ -12,7 +12,7 @@ namespace AntraVisitor
         static void Main(string[] args)
         {
             Restaurant grill = new Restaurant("GrillHouse", true);
-            SimpleWorker worker = new SimpleWorker("Aurimas", grill);
+            IWorker worker = new SimpleWorker("Aurimas", grill);  //iworker
             CookVisitor vsCook = new CookVisitor();
             worker.Accept(vsCook);
             vsCook.doDish(3);
