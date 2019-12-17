@@ -1,4 +1,5 @@
 ﻿using App.Core.Interface;
+using App.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,35 +8,39 @@ using System.Threading.Tasks;
 
 namespace App.Core.Decorator.Worker
 {
-    public class Cook : WorkerDecorator
+    public class Cook : WorkerDecorator, ISalary
     {
         private int _dish;
-        private int _plates;
 
         public Cook(IWorker worker) : base(worker)
         {
             this._dish = 0;
-            this._plates = 0;
+            this.BadPlates = 0;
         }
 
         public int doDish(int dishes)
         {
             this._dish += dishes;
-            this._plates += dishes;
+            this.BadPlates += dishes;
 
             return this._dish;
         }
 
-        public int BadPlates 
-        { 
-            get
+        public int BadPlates { get; set; }
+
+        public override double receiveSalary()
+        {
+            var temp = GetPerson(this);
+            if (temp is SimpleWorker)
             {
-                return _plates;
+                return base.receiveSalary() + (_dish * 2);
             }
-            set
+            if (temp is SuperWorker)
             {
-                _plates = value;
+                return base.receiveSalary() + (_dish * 3);
             }
+            return base.receiveSalary();
+            
         }
     }
 }

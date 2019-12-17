@@ -55,6 +55,29 @@ namespace App.Core.Decorator
             }
             return null;
         }
-
+        public static AbstractWorker GetPerson(IWorker comp)
+        {
+            if (comp is WorkerDecorator decor)
+            {
+                return GetPerson(decor.worker);
+            }
+            if (comp is SimpleWorker simple)
+            {
+                return simple;
+            }
+            else if (comp is SuperWorker stud)
+            {
+                return stud;
+            }
+            else if (comp is AbstractWorker pers)
+            {
+                return pers;
+            }
+            return null;
+        }
+        public virtual double receiveSalary()
+        {
+            return worker.receiveSalary();
+        }
     }
 }

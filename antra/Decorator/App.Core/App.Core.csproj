@@ -44,6 +44,7 @@
     <Compile Include="Decorator\Worker\Cleaner.cs" />
     <Compile Include="Decorator\Worker\Cook.cs" />
     <Compile Include="Decorator\IWorker.cs" />
+    <Compile Include="Decorator\Worker\ISalary.cs" />
     <Compile Include="Models\AbstractWorker.cs" />
     <Compile Include="Models\Restaurant.cs" />
     <Compile Include="Models\SimpleWorker.cs" />

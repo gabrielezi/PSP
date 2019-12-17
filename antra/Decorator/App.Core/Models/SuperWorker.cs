@@ -8,7 +8,7 @@ namespace App.Core.Models
 {
     public class SuperWorker : AbstractWorker
     {
-        public SuperWorker(string name, Restaurant restaurant) : base(name, restaurant)
+        public SuperWorker(string name, Restaurant restaurant, double salary) : base(name, restaurant, salary)
         {
         }
 

@@ -28,14 +28,14 @@ namespace DecoratorTest
         [TestMethod]
         public void TestSimpleWorkerClass()
         {
-            SimpleWorker worker = new SimpleWorker("Aurimas", new Restaurant("GrillHouse", true));
+            SimpleWorker worker = new SimpleWorker("Aurimas", new Restaurant("GrillHouse", true), 500);
 
             Assert.AreEqual("Aurimas", worker.Name);
         }
         [TestMethod]
         public void TestSuperWorkerClass()
         {
-            SuperWorker worker = new SuperWorker("Aurimas", new Restaurant("GrillHouse", true));
+            SuperWorker worker = new SuperWorker("Aurimas", new Restaurant("GrillHouse", true), 800);
 
             Assert.AreEqual("Aurimas", worker.Name);
         }

@@ -34,6 +34,18 @@ namespace App.Core.Decorator.Worker
             AbstractWorker worker = (AbstractWorker)this.worker;
             worker.Restaurant.Working = true;
         }
-
+        public override double receiveSalary()
+        {
+            var temp = GetPerson(this);
+            if (temp is SimpleWorker)
+            {
+                return base.receiveSalary() + (_drinksSold * 2);
+            }
+            else if (temp is SuperWorker)
+            {
+                return base.receiveSalary() + (_drinksSold * 4);
+            }
+            else return base.receiveSalary();
+        }
     }
 }
