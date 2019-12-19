@@ -33,6 +33,18 @@ namespace AntraExtension.Extension
             AbstractWorker worker = (AbstractWorker)this.worker;
             worker.Restaurant.Working = true;
         }
-    
+        public double receiveSalary()
+        {
+            if (worker is SimpleWorker)
+            {
+                return worker.receiveSalary() + (_drinksSold * 2);
+            }
+            if (worker is SuperWorker)
+            {
+                return worker.receiveSalary() + (_drinksSold * 4);
+            }
+            return worker.receiveSalary();
+        }
+
     }
 }

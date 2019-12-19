@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntraExtension.Extension
 {
-    class CookExtension : IWorkerExtension
+    class CookExtension : ICook
     {
         public IWorker worker;
         private int _dish;
@@ -27,5 +27,17 @@ namespace AntraExtension.Extension
         }
 
         public int BadPlates { get; set; }
+        public double receiveSalary()
+        {
+            if (worker is SimpleWorker)
+            {
+                return worker.receiveSalary() + (_dish * 2);
+            }
+            if (worker is SuperWorker)
+            {
+                return worker.receiveSalary() + (_dish * 3);
+            }
+            return worker.receiveSalary();
+        }
     }
 }

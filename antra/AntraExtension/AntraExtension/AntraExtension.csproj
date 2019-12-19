@@ -47,6 +47,10 @@
     <Compile Include="Extension\BartenderExtension.cs" />
     <Compile Include="Extension\CleanerExtension.cs" />
     <Compile Include="Extension\CookExtension.cs" />
+    <Compile Include="Extension\IBartender.cs" />
+    <Compile Include="Extension\ICleaner.cs" />
+    <Compile Include="Extension\ICook.cs" />
+    <Compile Include="Extension\ISalary.cs" />
     <Compile Include="IWorker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -8,14 +8,17 @@ namespace AntraExtension
 {
     public abstract class AbstractWorker : IWorker
     {
-        private Dictionary<string, IWorkerExtension> _extensions = new Dictionary<string, IWorkerExtension>();
+        private readonly IList<IWorkerExtension> _extensions;
         public string Name;
         public Restaurant Restaurant;
+        private double salary;
 
-        public AbstractWorker(string name, Restaurant restaurant)
+        public AbstractWorker(string name, Restaurant restaurant, double salary)
         {
             this.Name = name;
             this.Restaurant = restaurant;
+            this.salary = salary;
+            _extensions = new List<IWorkerExtension>();
         }
 
         public void workPlace(Restaurant newRestaurant)
@@ -25,28 +28,41 @@ namespace AntraExtension
 
         public abstract void work();
 
-        public void AddExtension(string name, IWorkerExtension extension)
+        public void AddExtension<T>(T extension) where T : IWorkerExtension
         {
-            if (_extensions.ContainsValue(extension))
+            if (!_extensions.Any(existingExtension => existingExtension is T))
             {
-                Console.WriteLine("This object is already extended by that type");
-                return;
+                _extensions.Add(extension);
             }
             else
             {
-                _extensions.Add(name, extension);
+                Console.WriteLine("ExtensionAlreadyAdded");
             }
-            
         }
 
-        public IWorkerExtension GetExtension(string name)
+        public void RemoveExtension<T>() where T : IWorkerExtension
         {
-            return _extensions[name];
+            IWorkerExtension toRemove = _extensions.FirstOrDefault(extension => extension is T);
+            if (toRemove == null)
+            {
+                Console.WriteLine("Extension was not added");
+            }
+            _extensions.Remove(toRemove);
         }
 
-        public void RemoveExtension(string name)
+        public T GetExtension<T>() where T : IWorkerExtension
         {
-            _extensions.Remove(name);
+            T result = (T)_extensions.FirstOrDefault(extension => extension is T);
+            if (result == null)
+            {
+                Console.WriteLine("Extension was not added");
+            }
+            return result;
+        }
+
+        public double receiveSalary()
+        {
+            return salary;
         }
     }
 }

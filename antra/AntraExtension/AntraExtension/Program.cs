@@ -12,34 +12,34 @@ namespace AntraExtension
         static void Main(string[] args)
         {
             Restaurant grill = new Restaurant("GrillHouse", true);
-            SimpleWorker worker = new SimpleWorker("Aurimas", grill);
+            AbstractWorker worker = new SimpleWorker("Aurimas", grill, 600);
 
-            CookExtension ext = new CookExtension(worker);
-            CleanerExtension ext2 = new CleanerExtension(worker);
-            BartenderExtension ext3 = new BartenderExtension(worker);
+            worker.AddExtension(new CookExtension(worker));
+            worker.AddExtension(new CleanerExtension(worker));
+            worker.AddExtension(new BartenderExtension(worker));
 
-            worker.AddExtension("CookExtension", ext);
-            worker.AddExtension("CleanerExtension", ext2);
-            worker.AddExtension("BartenderExtension", ext3);
-
-            var workerRole = (CookExtension)worker.GetExtension("CookExtension");
-            var workerRole2 = (CleanerExtension)worker.GetExtension("CleanerExtension");
-            var workerRole3 = (BartenderExtension)worker.GetExtension("BartenderExtension");
+            var workerRole = worker.GetExtension<CookExtension>();
 
             if (workerRole != null)
             {
-                Console.WriteLine($"Bad plates {workerRole.BadPlates}");
+                workerRole.doDish(3);
+                Console.WriteLine($"Cook salary {workerRole.receiveSalary()}");
             }
+
+            var workerRole2 = worker.GetExtension<CleanerExtension>();
+
             if (workerRole2 != null)
             {
-                Console.WriteLine($"Rooms cleaned: {workerRole2.cleanRoom(4)}");
-            } 
+                workerRole2.cleanRoom(5);
+                Console.WriteLine($"Cleaner salary {workerRole2.receiveSalary()}");
+            }
+
+            var workerRole3 = worker.GetExtension<BartenderExtension>();
+
             if (workerRole3 != null)
             {
-                workerRole3.openRestaurant();
-                Console.WriteLine($"Restaurant open: {grill.Working}");
-                workerRole3.closeRestaurant();
-                Console.WriteLine($"Restaurant open: {grill.Working}");
+                workerRole3.Sell(10);
+                Console.WriteLine($"Bartender salary {workerRole3.receiveSalary()}");
             }
 
             Console.ReadKey();

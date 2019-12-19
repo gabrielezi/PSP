@@ -4,12 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AntraExtension
+namespace AntraExtension.Extension
 {
-    public interface IWorker
+    public interface ISalary : IWorkerExtension
     {
-        void workPlace(Restaurant newRestaurant);
-        void work();
         double receiveSalary();
     }
 }
