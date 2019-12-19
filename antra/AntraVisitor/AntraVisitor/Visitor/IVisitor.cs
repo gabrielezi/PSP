@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace AntraVisitor
 {
-    interface IVisitor
+    public interface IVisitor
     {
-        void Visit(AbstractWorker worker);
+        void VisitSimple(SimpleWorker simpWorker);
+        void VisitSuper(SuperWorker simpWorker);
     }
 }

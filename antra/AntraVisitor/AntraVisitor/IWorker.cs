@@ -10,5 +10,7 @@ namespace AntraVisitor
     {
         void workPlace(Restaurant newRestaurant);
         void work();
+        public abstract void Accept(IVisitor visitor);
+        double receiveSalary();
     }
 }

@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace AntraVisitor
 {
-    class SuperWorker : AbstractWorker
+    public class SuperWorker : AbstractWorker
     {
-        public SuperWorker(string name, Restaurant restaurant) : base(name, restaurant)
+        public SuperWorker(string name, Restaurant restaurant, double salary) : base(name, restaurant, salary)
         {
         }
 
         public override void Accept(IVisitor visitor)
         {
-            visitor.Visit(this);
+            visitor.VisitSuper(this);
         }
         public override void work()
         {

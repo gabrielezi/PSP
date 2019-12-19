@@ -6,15 +6,17 @@ using System.Threading.Tasks;
 
 namespace AntraVisitor
 {
-    abstract class AbstractWorker : IWorker
+    public abstract class AbstractWorker : IWorker
     {
         public string Name;
         public Restaurant Restaurant;
+        private double salary;
 
-        public AbstractWorker(string name, Restaurant restaurant)
+        public AbstractWorker(string name, Restaurant restaurant, double salary)
         {
             this.Name = name;
             this.Restaurant = restaurant;
+            this.salary = salary;
         }
 
         public void workPlace(Restaurant newRestaurant)
@@ -23,5 +25,9 @@ namespace AntraVisitor
         }
         public abstract void work();
         public abstract void Accept(IVisitor visitor);
+        public double receiveSalary()
+        {
+            return salary;
+        }
     }
 }

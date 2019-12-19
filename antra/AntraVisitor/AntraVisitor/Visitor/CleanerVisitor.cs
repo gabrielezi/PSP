@@ -10,7 +10,7 @@ namespace AntraVisitor.Visitor
     {
         public IWorker worker;
         private int _rooms;
-        public void Visit(AbstractWorker worker)
+        public CleanerVisitor(IWorker worker)
         {
             this._rooms = 0;
             this.worker = worker;
@@ -21,6 +21,16 @@ namespace AntraVisitor.Visitor
         {
             this._rooms += rooms;
             return this._rooms;
+        }
+
+        public void VisitSimple(SimpleWorker simpWorker)
+        {
+            Console.WriteLine($"Cleaner salary: { simpWorker.receiveSalary() + (_rooms * 1)}");
+        }
+
+        public void VisitSuper(SuperWorker simpWorker)
+        {
+            Console.WriteLine($"Cleaner salary: { simpWorker.receiveSalary() + (_rooms * 2)}");
         }
     }
 }

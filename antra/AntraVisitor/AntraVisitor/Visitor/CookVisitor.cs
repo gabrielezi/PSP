@@ -10,7 +10,8 @@ namespace AntraVisitor.Visitor
     {
         private int _dish;
         public IWorker worker;
-        public void Visit(AbstractWorker worker)
+        
+        public CookVisitor(IWorker worker)
         {
             this._dish = 0;
             this.BadPlates = 0;
@@ -24,6 +25,16 @@ namespace AntraVisitor.Visitor
             this.BadPlates += dishes;
 
             return this._dish;
+        }
+
+        public void VisitSimple(SimpleWorker simpWorker)
+        {
+            Console.WriteLine($"Cook salary: {simpWorker.receiveSalary() + (_dish * 2)}");
+        }
+
+        public void VisitSuper(SuperWorker simpWorker)
+        {
+            Console.WriteLine($"Cook salary: {simpWorker.receiveSalary() + (_dish * 3)}");
         }
 
         public int BadPlates { get; set; }

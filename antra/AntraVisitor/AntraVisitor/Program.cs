@@ -12,19 +12,19 @@ namespace AntraVisitor
         static void Main(string[] args)
         {
             Restaurant grill = new Restaurant("GrillHouse", true);
-            IWorker worker = new SimpleWorker("Aurimas", grill);  //iworker
-            CookVisitor vsCook = new CookVisitor();
-            worker.Accept(vsCook);
+            IWorker worker = new SimpleWorker("Aurimas", grill, 500);
+
+            CookVisitor vsCook = new CookVisitor(worker);
             vsCook.doDish(3);
-            Console.WriteLine($"Bad plates: {vsCook.BadPlates}");
+            worker.Accept(vsCook);
 
-            CleanerVisitor vsCleaner = new CleanerVisitor();
+            CleanerVisitor vsCleaner = new CleanerVisitor(worker);
+            vsCleaner.cleanRoom(5);
             worker.Accept(vsCleaner);
-            Console.WriteLine($"Rooms cleaned: {vsCleaner.cleanRoom(5)}");
 
-            BartenderVisitor vsBartender = new BartenderVisitor();
+            BartenderVisitor vsBartender = new BartenderVisitor(worker);
+            vsBartender.Sell(4);
             worker.Accept(vsBartender);
-            Console.WriteLine($"Drinks sold: {vsBartender.Sell(4)}");
 
         }
     }
