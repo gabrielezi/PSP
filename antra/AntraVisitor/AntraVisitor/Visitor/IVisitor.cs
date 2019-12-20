@@ -9,6 +9,6 @@ namespace AntraVisitor
     public interface IVisitor
     {
         void VisitSimple(SimpleWorker simpWorker);
-        void VisitSuper(SuperWorker simpWorker);
+        void VisitSuper(SuperWorker supWorker);
     }
 }

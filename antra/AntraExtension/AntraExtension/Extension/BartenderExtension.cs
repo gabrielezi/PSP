@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AntraExtension.Extension
 {
-    class BartenderExtension : IWorkerExtension
+    class BartenderExtension : IBartender
     {
         public IWorker worker;
         private int _drinksSold;

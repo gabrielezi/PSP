@@ -55,7 +55,7 @@ namespace App.Core.Decorator
             }
             return null;
         }
-        public static AbstractWorker GetPerson(IWorker comp)
+        public static IWorker GetPerson(IWorker comp)
         {
             if (comp is WorkerDecorator decor)
             {
